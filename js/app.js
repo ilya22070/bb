@@ -2,7 +2,6 @@ let scrollPos = window.pageYOffset,
   header = document.querySelector('.header'),
   headerHeight = header.offsetHeight,
   fixed = document.querySelector('.fixed')
-
 window.addEventListener('scroll', () => {
   scrollPos = this.pageYOffset
   if (scrollPos >= headerHeight) {
@@ -18,7 +17,6 @@ let lScroll = document.querySelectorAll('.scroll__links')
 
 lScroll.forEach((e) => {
   let elementID = e.dataset.scroll
-  let elementOffset = document.querySelector(elementID).offsetTop
 
   if (e.closest('div').classList.contains('burger__menu-item')) {
     var burgerLink = e
@@ -27,6 +25,7 @@ lScroll.forEach((e) => {
     if (burgerLink) {
       burger.style.right = '-100%'
     }
+    let elementOffset = document.querySelector(elementID).offsetTop
     e.preventDefault()
     window.scrollTo({
       top: elementOffset - 20,
